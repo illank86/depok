@@ -1,26 +1,41 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import RecipeReviewCard from "./components/cards";
+import ButtonBase from "./components/buttons";
+import Menus from "./components/menu";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
+
+  handleScrollToElement = () => {
+    window.scrollTo({
+      top: this.myRef.current.offsetTop,
+      behavior: "smooth"
+    });
+  };
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <React.Fragment>
+        <div className="sections section1">
+          <div className="Header">
+            <img
+              src={require("./assets/images/logo-6.png")}
+              width="100"
+              height="120"
+            />
+            <Menus right />
+          </div>
+          <div className="buttons">
+            <ButtonBase />
+          </div>
+        </div>
+        <div className="sections section2" ref={this.myRef}>
+          <p>Section 2</p>
+        </div>
+      </React.Fragment>
     );
   }
 }
