@@ -26,7 +26,6 @@ class App extends Component {
               width="100"
               height="120"
             />
-            <Menus right />
           </div>
           <div className="buttons">
             <ButtonBase />
