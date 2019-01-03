@@ -8,12 +8,17 @@ const styles = theme => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
+    justifyContent: "center",
     minWidth: 300,
-    width: "100%"
+    width: "100%",
+    borderColor: "white"
   },
   image: {
     position: "relative",
     height: 100,
+    marginRight: 10,
+    backgroundColor: "white",
+    borderRadius: 10,
     [theme.breakpoints.down("xs")]: {
       width: "100% !important", // Overrides inline-style
       height: 60
@@ -40,8 +45,9 @@ const styles = theme => ({
     bottom: 0,
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
-    color: theme.palette.common.white
+    justifyContent: "center"
+
+    // color: theme.palette.common.white
   },
   imageSrc: {
     position: "absolute",
@@ -58,8 +64,9 @@ const styles = theme => ({
     right: 0,
     top: 0,
     bottom: 0,
-    backgroundColor: theme.palette.common.black,
+    // backgroundColor: theme.palette.common.black,
     opacity: 0.4,
+
     transition: theme.transitions.create("opacity")
   },
   imageTitle: {
@@ -70,7 +77,8 @@ const styles = theme => ({
   imageMarked: {
     height: 3,
     width: 18,
-    backgroundColor: theme.palette.common.white,
+
+    // backgroundColor: theme.palette.common.white,
     position: "absolute",
     bottom: -2,
     left: "calc(50% - 9px)",
@@ -82,37 +90,37 @@ const images = [
   {
     url: "",
     title: "Sekilas Depok",
-    width: "25%"
+    width: "13.3%"
   },
   {
     url: "",
     title: "Pemerintahan",
-    width: "25%"
+    width: "13.3%"
   },
   {
     url: "/static/images/grid-list/camera.jpg",
     title: "Berita",
-    width: "25%"
+    width: "13.3%"
   },
   {
     url: "/static/images/grid-list/camera.jpg",
     title: "Perangkat Daerah",
-    width: "25%"
+    width: "13.3%"
   },
   {
     url: "/static/images/grid-list/camera.jpg",
     title: "Transparansi",
-    width: "33.3%"
+    width: "13.3%"
   },
   {
     url: "/static/images/grid-list/camera.jpg",
     title: "Info Publik",
-    width: "33.3%"
+    width: "13.3%"
   },
   {
     url: "/static/images/grid-list/camera.jpg",
     title: "Interaksi Warga",
-    width: "33.4%"
+    width: "13.3%"
   }
 ];
 

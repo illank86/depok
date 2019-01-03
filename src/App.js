@@ -2,7 +2,16 @@ import React, { Component } from "react";
 import "./App.css";
 import RecipeReviewCard from "./components/cards";
 import ButtonBase from "./components/buttons";
-import Menus from "./components/menu";
+import Popup from "reactjs-popup";
+import BurgerIcon from "./components/BurgerIcon";
+import Menu from "./components/menu";
+import SimpleSlider from "./components/Carousel";
+
+const contentStyle = {
+  background: "rgba(255,255,255,0)",
+  width: "80%",
+  border: "none"
+};
 
 class App extends Component {
   constructor(props) {
@@ -21,18 +30,37 @@ class App extends Component {
       <React.Fragment>
         <div className="sections section1">
           <div className="Header">
-            <img
-              src={require("./assets/images/logo-6.png")}
-              width="100"
-              height="120"
-            />
+            <div className="logo" />
+
+            <Popup
+              modal
+              overlayStyle={{ background: "rgba(255,255,255,0.8" }}
+              contentStyle={contentStyle}
+              closeOnDocumentClick={false}
+              trigger={open => <BurgerIcon open={open} />}
+            >
+              {close => <Menu close={close} />}
+            </Popup>
           </div>
           <div className="buttons">
+            <SimpleSlider />
             <ButtonBase />
           </div>
         </div>
         <div className="sections section2" ref={this.myRef}>
-          <p>Section 2</p>
+          <div>
+            <h1 style={{ textAlign: "center", color: "grey" }}>
+              Berita Depok Terkini
+            </h1>
+            <p style={{ textAlign: "center", color: "#rgba(255, 255, 255)" }}>
+              Dapatkan berita terbaru mengenai depok
+            </p>
+          </div>
+          <div className="berita">
+            <RecipeReviewCard />
+            <RecipeReviewCard />
+            <RecipeReviewCard />
+          </div>
         </div>
       </React.Fragment>
     );
